@@ -4,13 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "husky",
+    "dev": "echo \"Error: no dev specified\" && exit 0",
+    "format": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
+    "check": "prettier --format ./src/**/*.{js,jsx,ts,tsx}",
+    "lint": "echo \"Error: no lint specified\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.4"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx,ts,tsx}": "pnpm format"
   }
 }
